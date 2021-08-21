@@ -6,6 +6,11 @@
     "extra_configs": {
     },
     "history": [
+        {
+            "last_accessed_time": "2021-08-21T03:12:50Z",
+            "line_number": -1,
+            "path": "scala笔记-点滴技能.md"
+        }
     ],
     "image_folder": "vx_images",
     "name": "scala",
