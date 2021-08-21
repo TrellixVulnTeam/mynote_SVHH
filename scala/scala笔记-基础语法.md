@@ -15,7 +15,7 @@ var 变量名：数据类型 = 初始化值
 
 ### Scala中定义常量
 
-```
+```scala
 val 常量名 = 初始化值
 val 常量名：数据类型 = 初始化值
 ```
@@ -48,7 +48,7 @@ scala>
 
 3、val修饰的变量，变量的类型是引用类型，引用不可变，引用的内容可变
 
-```
+```scala
 val a1 = Array(1,2,3)
 val a2 = Array(4,5,6)
 a1 = a2 //不可以，引用不可变
@@ -57,7 +57,7 @@ a1(0) = 10 //可以的，引用的内容可变
 
 4、  val修饰的变量，还可以用lazy修饰，在需要使用的时候赋值
 
-```
+```scala
 scala> val a = 10
 a: Int = 10
 
@@ -94,7 +94,7 @@ scala> println(a)
 
 2、值类型是类类型，没有基本数据类型和包装类之分。
 
-```
+```scala
 scala> 1 to 10
 res3: scala.collection.immutable.Range.Inclusive = Range 1 to 10
 
@@ -116,7 +116,7 @@ res4: scala.collection.immutable.Range.Inclusive = Range 1 to 10
 
 1、scala中的运算符都是方法的调用
 
-```
+```scala
 scala> 1+1
 res6: Int = 2
 
@@ -150,7 +150,7 @@ scala> a -= 2
 
 含有if else的语句块
 
-```
+```scala
 scala> val a = 1
 a: Int = 1
 
@@ -177,7 +177,7 @@ res6: AnyVal = ()
 
 #### 块表达式
 
-```
+```scala
 scala> val res = {10}
 res: Int = 10
 
@@ -203,7 +203,7 @@ scala> println(res)
 
 for 
 
-```
+```scala
 for (i <- 表达式、数组、集合)
 ```
 
@@ -284,13 +284,13 @@ scala> val c = for(b <- 1 to 10) print((b*10).toString + " ")
 
 while
 
-```
+```scala
 while (条件语句) {表达式}
 ```
 
 do while
 
-```
+```scala
 do{表达式} while(条件语句)
 ```
 
@@ -298,7 +298,7 @@ do{表达式} while(条件语句)
 
 定义语法：
 
-```
+```scala
 def 方法名(参数列表):返回类型 = 方法体  //返回类型可以省略，但当方法是递归方法时不能省略
 ```
 
@@ -328,7 +328,7 @@ scala> add(1,2)
 
 #### 带有参数列表的方法
 
-~~~
+~~~scala
 scala> def addAndMultiply(x:Int,y:Int,z:Int) = (x+y)*z
 addAndMultiply: (x: Int, y: Int, z: Int)Int
 
@@ -346,7 +346,7 @@ scala>
 
 #### 无参方法
 
-~~~
+~~~scala
 scala> def printInfo = println("I love scala")
 printInfo: Unit
 
@@ -362,7 +362,7 @@ scala>
 
 
 
-~~~
+~~~scala
 scala> def printInfo() = println("I love scala")
 printInfo: ()Unit
 
@@ -383,7 +383,7 @@ scala>
 
 #### 带有默认值参数的方法
 
-```
+```scala
 scala> def add(a:Int = 1,b:Int,c:Int =3) = println("a=" + a + " b=" +b + " c=" + c)
 add: (a: Int, b: Int, c: Int)Unit
 
@@ -404,7 +404,7 @@ scala> add(1)
 
 #### 可变长参数方法
 
-```
+```scala
 scala> def add(a:Int*)={
      | for(i <- a)
      | println(a)}
@@ -422,7 +422,7 @@ ArraySeq(1, 2, 3, 4)
 
 ### 函数
 
-```
+```scala
 scala> (x:Int,y:Int) => x+y
 res0: (Int, Int) => Int = $$Lambda$775/901751227@6b321262
 
@@ -450,7 +450,7 @@ fun: (Int, Int) => Int = $$Lambda$806/2014166743@31859960
 
 #### 无参函数
 
-```
+```scala
 scala> val fun1 = ()=>println("haha")
 fun1: () => Unit = $$Lambda$807/1059781259@6b2efcae
 
@@ -463,7 +463,7 @@ haha
 
 #### 多参数函数
 
-```
+```scala
 scala> val fun2 = (x:Int,y:Int)=>x*y
 fun2: (Int, Int) => Int = $$Lambda$813/281110571@2cf97875
 
@@ -489,7 +489,7 @@ scala>
 
 1、可以把函数作为参数传递给一个方法
 
-```
+```scala
 scala> def m(f:(Int,Int)=>Int) = f(5,1)
 m: (f: (Int, Int) => Int)Int
 
@@ -502,7 +502,7 @@ res0: Int = 4
 
 2、方法可以转换函数
 
-```
+```scala
 scala> def m(f:(Int,Int)=>Int) = f(5,1)
 m: (f: (Int, Int) => Int)Int
 
@@ -533,7 +533,7 @@ set sque map
 
 ##### 数组的定义
 
-```
+```scala
 scala> val arr = Array(1,2,3)
 arr: Array[Int] = Array(1, 2, 3)
 
@@ -560,7 +560,7 @@ java.lang.NullPointerException
 
 ##### 数组的访问和常用方法
 
-```
+```scala
 scala> val arr1 = Array[Int](4,5,6)
 arr1: Array[Int] = Array(4, 5, 6)
 
@@ -595,7 +595,7 @@ res18: Array[Int] = Array(7, 6, 5)
 
 ##### 变长数组的创建
 
-```
+```scala
 scala> import scala.collection.mutable.ArrayBuffer
 ArrayBuffer   ArrayBufferView
 
@@ -617,7 +617,7 @@ arr2: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer()
 
 ##### 数组的操作
 
-```
+```scala
 scala> var arr2 = ArrayBuffer[Int]() //定义数组时数组类型不能少
 arr2: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer()
 
@@ -659,7 +659,7 @@ res44: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(2, 100)
 
 ##### 练习：数组中的正负数分开
 
-```
+```scala
 scala> var a1 = Array(1,2,-6,-8,4,5,-2,33)
 a1: Array[Int] = Array(1, 2, -6, -8, 4, 5, -2, 33)
 
@@ -686,7 +686,7 @@ res48: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1, 2, 4, 5, 33, -
 
 ##### 数组的变换
 
-```
+```scala
 scala>  val a = Array(1,2,3,4,5)
 a: Array[Int] = Array(1, 2, 3, 4, 5)
 
@@ -710,7 +710,7 @@ res8: Array[Int] = Array(2, 4)
 
 ##### 不可变list创建以及操作
 
-```
+```scala
 scala> val list1 = List(1,2,3)
 list1: List[Int] = List(1, 2, 3)
 
@@ -745,7 +745,7 @@ res18: List[Int] = List(1, 2, 3, 4, 5, 6)
 
 ##### 可变list创建以及操作
 
-```
+```scala
 scala> import scala.collection.mutable.ListBuffer
 import scala.collection.mutable.ListBuffer
 
@@ -788,7 +788,7 @@ res28: scala.collection.mutable.ListBuffer[Int] = ListBuffer(1, 2, 3, 4, 5)
 
 ##### list的转换
 
-```
+```scala
 scala> list3.map(_*10)
 res29: scala.collection.mutable.ListBuffer[Int] = ListBuffer(10, 20, 30, 40, 50)
 
@@ -818,7 +818,7 @@ res32: scala.collection.mutable.ListBuffer[Int] = ListBuffer(10, 20, 30, 40, 50)
 
 ##### 创建map
 
-```
+```scala
 //创建不可变map，以下两种方法都可以
 scala> val score = Map("zhangsan"->90,"lisi"->80)
 score: scala.collection.immutable.Map[String,Int] = Map(zhangsan -> 90, lisi -> 80)
@@ -838,7 +838,7 @@ score: scala.collection.mutable.Map[String,Int] = HashMap(zhangsan -> 95, lisi -
 
 ##### 基本操作
 
-```
+```scala
 scala> score("zhangsan")
 res0: Int = 95
 //这种方法取值如果没有这个key会报错
@@ -886,7 +886,7 @@ res13: Array[Int] = Array(96, 101)
 
 ##### 其他
 
-```
+```scala
 scala> score
 res14: scala.collection.mutable.Map[String,Int] = HashMap(zhangsan -> 95, lisi -> 100)
 
@@ -947,7 +947,7 @@ zhaowu:99
 
 ##### 元组的创建
 
-```
+```scala
 scala> val t1 = (1,2,3,4)
 t1: (Int, Int, Int, Int) = (1,2,3,4)
 //元组内的元素可以不同类型
@@ -1003,7 +1003,7 @@ t5: (String, String, Int) = (qianfeng,dashuju,1)
 
 ##### 元组的遍历
 
-```
+```scala
 scala> val t5 = new Tuple3("qianfeng","dashuju",1)
 t5: (String, String, Int) = (qianfeng,dashuju,1)
 //以下两种方式都可以遍历元组的成员
@@ -1020,7 +1020,7 @@ dashuju
 
 ##### 拉链操作
 
-```
+```scala
 scala> val a1 = Array("Java","scala","python")
 a1: Array[String] = Array(Java, scala, python)
 
@@ -1067,7 +1067,7 @@ set中的元素是无序随机的
 
 ##### 创建set
 
-```
+```scala
 //创建不可变set
 scala> val set1 = Set(1,2,3)
 set1: scala.collection.immutable.Set[Int] = Set(1, 2, 3)
@@ -1110,7 +1110,7 @@ res68: set2.type = HashSet(1, 2, 4)
 
 ##### 基本操作
 
-```
+```scala
 //返回set的第一个元素
 scala> set2.head
 res69: Int = 1
@@ -1139,7 +1139,7 @@ res77: scala.collection.mutable.Set[Int] = HashSet(4)
 
 #### 集合函数
 
-```
+```scala
 scala> val list1 = List(2,3,4,5,6,7)
 list1: List[Int] = List(2, 3, 4, 5, 6, 7)
 
