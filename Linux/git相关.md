@@ -11,3 +11,28 @@
 
 把proxy注释掉后正常
 ```
+# 更新远程代码到本地仓库
+## 查看远程仓库
+```linux
+git remote -v
+```
+## 从远程获取最新版本到本地
+```linux
+git fetch origin main:temp
+```
+git fetch origin main:temp 这句命令的意思是：从远程的origin仓库的master分支下载到本地并新建一个分支temp
+## 比较本地的仓库和远程参考的区别
+```Linux
+git diff temp
+```
+命令的意思是：比较master分支和temp分支的不同
+
+## 合并temp分支到master分支
+```Linux
+git merge temp
+```
+## 如果不想要temp分支了，可以删除此分支
+```Linux
+git branch -d temp
+```
+如果该分支没有合并到主分支会报错，可以用以下命令强制删除git branch -D <分支名>
