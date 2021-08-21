@@ -2,7 +2,7 @@ scala笔记-类和对象
 
 ### 类的属性和定义
 
-```
+```scala
 class PersonS {
   //val 修饰的属性，系统会自动生成get方法
   val id:String = "1234"
@@ -40,7 +40,7 @@ object  test{
 
 ### 构造函数
 
-```
+```scala
 //如果构造函数参数声明为val，Scala只为它生成一个getter方法。
 class Book (val title:String){
 
@@ -132,7 +132,7 @@ object Main{
 
 ###  单例对象
 
-```
+```scala
 //单例对象不能带参数，因为不能创建他的实例化
 object Logger {
   def log(message:String): Unit ={
@@ -158,7 +158,7 @@ object LoggerTest{
 
 ### 伴生对象
 
-```
+```scala
 //类和对象名相同，两者互为伴生对象伴生类，可互相访问彼此的私有属性或者方法
 class AccountInfo {
 
@@ -184,7 +184,7 @@ object companionTest{
 
 ### 应用程序对象
 
-```
+```scala
 //类和对象名相同，两者互为伴生对象伴生类，可互相访问彼此的私有属性或者方法
 class AccountInfo {
 
@@ -209,7 +209,7 @@ object companionTest extends App{
 
 ### apply和unapply方法
 
-```
+```scala
 class User (val name:String,val password:String) {
 
 }
@@ -247,7 +247,7 @@ object userTest{
 
 ### 类的继承
 
-```
+```scala
 class Point (val xc:Int,val yc:Int) {
   var x:Int = xc
   var y:Int = yc
@@ -294,7 +294,7 @@ object TestClass{
 
 ### 抽象类
 
-```
+```scala
 abstract class Wangyp {
   //抽象字段，没有初始化值
   var name:String
@@ -328,7 +328,7 @@ object PersonTest{
 
 ### 特质
 
-```
+```scala
 //定义一个带有抽象方法的特质
  trait Iterator[A]{
   def hasNext:Boolean
@@ -369,7 +369,7 @@ object TraitTest {
 
 ### 特质的应用
 
-```
+```scala
 trait Logger{
   def log(msg:String)
 }
@@ -416,7 +416,7 @@ object TraitTest2 {
 
 ### 特质的应用-瘦接口变成胖接口
 
-```
+```scala
 trait LoggerQin{
   def log(msg:String)
   def info(msg:String)={
@@ -455,7 +455,7 @@ object TraitTest3 {
 
 ### 样例类
 
-```
+```scala
 object CaseclassDemo {
   def main(args: Array[String]): Unit = {
     //定义样例类
@@ -484,7 +484,7 @@ object CaseclassDemo {
 
 ### 模式匹配
 
-```
+```scala
 //字面值匹配
 object PatternDemo {
   def main(args: Array[String]): Unit = {
@@ -587,7 +587,7 @@ object PatternDemo {
 
 ### 偏函数
 
-```
+```scala
 //使用中规中矩方法定义偏函数
 object PartialFunctionDemo {
   //创建一个普通函数
@@ -686,7 +686,7 @@ object PartialFunctionDemo {
 
 作用2：用在模式匹配中
 
-```
+```scala
 sealed abstract class Furniture
 case class Couch() extends Furniture
 case class Chair() extends Furniture
@@ -708,7 +708,7 @@ object SealedDemo   {
 
 ### 字符串插值器
 
-```
+```scala
 object StringDemo {
   def main(args: Array[String]): Unit = {
     //s 字符串插值器
@@ -735,7 +735,7 @@ object StringDemo {
 
 ### 文件操作
 
-```
+```scala
 import scala.io.Source
 
 object FileDemo extends App {
@@ -785,7 +785,7 @@ object FileDemo extends App {
 
 ### 正则表达式
 
-```
+```scala
 import scala.util.matching.Regex
 
 object RegDemo extends App{
@@ -825,7 +825,7 @@ object RegDemo extends App{
 
 参数和返回值都是函数
 
-```
+```scala
 object HFunDemo extends App {
   //传入参数是函数
   val arr = Array(1,2,3,4,5)
@@ -857,7 +857,7 @@ object HFunDemo extends App {
 
 闭包是一个函数，函数的返回值依赖于函数外部的一个或者多个变量
 
-```
+```scala
 object FunDemo1 extends App {
   val multiply = (x:Int) =>x*5
 
@@ -887,7 +887,7 @@ object FunDemo1 extends App {
 
 柯里化是把接收多个参数的函数变成接收一个单一参数的函数，返回一个接收余下参数的新函数
 
-```
+```scala
 object CurryDemo  extends App {
   //创建一个普通的函数
   def add(x:Int,y:Int) = {x+y}
@@ -913,7 +913,7 @@ object CurryDemo  extends App {
 
 ### 方法的嵌套和多态
 
-```
+```scala
 object Demo{
   def factorial(x:Int):Int = {
     def fact(x:Int,accumulator:Int):Int = {
