@@ -1,0 +1,49 @@
+# python模块发布
+
+## 目录结构
+```bash
+❯ ls
+data  __init__.py  LICENSE  README.md  setup.cfg  setup.py  src  tests
+❯ tree
+.
+├── data
+│   └── example.csv
+├── __init__.py
+├── LICENSE
+├── README.md
+├── setup.cfg
+├── setup.py
+├── src
+│   ├── checkfilecode.py
+│   ├── dataintodatabase.py
+│   ├── __init__.py
+│   └── __main__.py
+└── tests
+
+3 directories, 10 files
+```
+
+## 打包命令
+```bash
+python3 -m build
+```
+或者
+```bash
+python3 setup.py sdist bdist_wheel
+```
+## 在家目录创建.pypirc文件
+创建完该文件后用twine上传模块就不需要输入用户名密码了
+```bash
+❯ cat .pypirc
+[distutils]
+index-servers=pypi
+
+[pypi]
+repository = https://upload.pypi.org/legacy/
+username = qinxuan
+password = 123qwe*90OP
+```
+## 打包好的模块上传到pypi
+```bash
+twine upload dist/*
+```
