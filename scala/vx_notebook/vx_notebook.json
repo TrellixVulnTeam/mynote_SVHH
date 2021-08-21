@@ -7,9 +7,14 @@
     },
     "history": [
         {
-            "last_accessed_time": "2021-08-21T03:12:50Z",
-            "line_number": -1,
+            "last_accessed_time": "2021-08-21T14:16:02Z",
+            "line_number": 4,
             "path": "scala笔记-点滴技能.md"
+        },
+        {
+            "last_accessed_time": "2021-08-21T14:16:03Z",
+            "line_number": 59,
+            "path": "scala笔记-基础语法.md"
         }
     ],
     "image_folder": "vx_images",
