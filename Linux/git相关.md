@@ -11,6 +11,11 @@
 
 把proxy注释掉后正常
 ```
+
+## 解决git中文路径显示unicode代码的问题
+```linux
+git config --global core.quotepath false
+```
 # 更新远程代码到本地仓库
 ## 查看本地仓库文件是否有改动
 ```Linux
