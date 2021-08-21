@@ -12,6 +12,12 @@
 把proxy注释掉后正常
 ```
 # 更新远程代码到本地仓库
+## 查看本地仓库文件是否有改动
+```Linux
+git status
+```
+## 如果有改动的话使用gitGUI工具提交改动并push到远程仓库
+
 ## 查看远程仓库
 ```linux
 git remote -v
