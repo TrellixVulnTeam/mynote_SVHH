@@ -1,25 +1,89 @@
 {
     "attachment_folder": "vx_attachments",
     "config_mgr": "vx.vnotex",
+<<<<<<< HEAD
     "created_time": "2021-08-22T01:36:49Z",
+=======
+    "created_time": "2021-08-21T00:18:18Z",
+>>>>>>> home
     "description": "",
     "extra_configs": {
     },
     "history": [
         {
+<<<<<<< HEAD
             "last_accessed_time": "2021-08-22T01:37:26Z",
             "line_number": 1,
             "path": "分支-home.md"
         },
         {
             "last_accessed_time": "2021-08-22T01:37:31Z",
+=======
+            "last_accessed_time": "2021-08-21T00:20:07Z",
+            "line_number": 345,
+            "path": "Linux/csvtk使用方法.md"
+        },
+        {
+            "last_accessed_time": "2021-08-21T00:20:08Z",
+            "line_number": -1,
+            "path": "Linux/编写shell脚本注意事项.md"
+        },
+        {
+            "last_accessed_time": "2021-08-21T00:20:12Z",
+            "line_number": -1,
+            "path": "Linux/终端操作Linux系统快捷键.md"
+        },
+        {
+            "last_accessed_time": "2021-08-21T00:20:29Z",
+            "line_number": -1,
+            "path": "Linux/win10 Linux子系统安装流程.md"
+        },
+        {
+            "last_accessed_time": "2021-08-21T00:20:29Z",
+            "line_number": -1,
+            "path": "Linux/shell.md"
+        },
+        {
+            "last_accessed_time": "2021-08-21T00:20:29Z",
+            "line_number": -1,
+            "path": "Linux/Linux命令.md"
+        },
+        {
+            "last_accessed_time": "2021-08-21T00:20:29Z",
+>>>>>>> home
             "line_number": -1,
             "path": "windows terminal ssh连接服务器反空闲.md"
         },
         {
+<<<<<<< HEAD
             "last_accessed_time": "2021-08-22T01:37:31Z",
             "line_number": 2,
             "path": "git相关.md"
+=======
+            "last_accessed_time": "2021-08-21T00:20:29Z",
+            "line_number": -1,
+            "path": "powershell美化.md"
+        },
+        {
+            "last_accessed_time": "2021-08-21T00:20:29Z",
+            "line_number": -1,
+            "path": "csv-nix-tools使用说明.md"
+        },
+        {
+            "last_accessed_time": "2021-08-21T00:20:30Z",
+            "line_number": -1,
+            "path": "Linux/youtube-dl帮助文件.md"
+        },
+        {
+            "last_accessed_time": "2021-08-22T01:17:20Z",
+            "line_number": 19,
+            "path": "git相关.md"
+        },
+        {
+            "last_accessed_time": "2021-08-22T01:24:09Z",
+            "line_number": 0,
+            "path": "分支测试.md"
+>>>>>>> home
         }
     ],
     "image_folder": "vx_images",
