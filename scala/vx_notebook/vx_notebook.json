@@ -7,8 +7,18 @@
     },
     "history": [
         {
-            "last_accessed_time": "2021-08-21T03:12:50Z",
-            "line_number": -1,
+            "last_accessed_time": "2021-08-21T14:16:49Z",
+            "line_number": 1141,
+            "path": "scala笔记-基础语法.md"
+        },
+        {
+            "last_accessed_time": "2021-08-21T14:16:50Z",
+            "line_number": 889,
+            "path": "scala笔记-类和对象.md"
+        },
+        {
+            "last_accessed_time": "2021-08-21T14:16:51Z",
+            "line_number": 258,
             "path": "scala笔记-点滴技能.md"
         }
     ],
