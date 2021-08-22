@@ -47,3 +47,36 @@ git merge temp
 git branch -d temp
 ```
 如果该分支没有合并到主分支会报错，可以用以下命令强制删除git branch -D <分支名>
+
+
+## 使用gitignore文件忽略不需要同步的文件
+```
+成教/vx_notebook/*
+成教/vx_recycle_bin/*
+成教/vx.json
+数据库/vx_notebook/*
+数据库/vx_recycle_bin/*
+数据库/vx.json
+一建/vx_notebook/*
+一建/vx_recycle_bin/*
+一建/vx.json
+Linux/vx_notebook/*
+Linux/vx_recycle_bin/*
+Linux/vx.json
+python/vx_notebook/*
+python/vx_recycle_bin/*
+python/vx.json
+rust/vx_notebook/*
+rust/vx_recycle_bin/*
+rust/vx.json
+scala/vx_notebook/*
+scala/vx_recycle_bin/*
+scala/vx.json
+```
+## gitignore不生效的解决办法
+先删除缓存，再从新添加，再提交。
+```linux
+git rm -r --cached .
+git add .
+git commit -m 'update.gitignore'
+```
