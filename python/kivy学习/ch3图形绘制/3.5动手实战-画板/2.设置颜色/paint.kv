@@ -1,0 +1,35 @@
+#:import C kivy.utils.get_color_from_hex
+
+<BottomColorButton@ToggleButton>:
+    group:'color'
+        background_normal:''
+        background_down:''
+
+    border:(3,3,3,3)
+
+    on_release: app.canvas_widget.change_color(self.background_color)
+
+
+<DrawCanvasWidget>:
+    canvas.before:
+        Color:
+            rgba: [1,1,1,1]
+        Rectangle:
+            pos:self.pos
+            size:self.size
+    
+
+    BoxLayout:
+        id: bottom_box
+        orientation:'horizontal'
+        padding: 2
+        spacing: 2
+        size: root.width,40
+
+        BottomColorButton:
+            background_color: C('#19caad')
+            state:'down'
+        
+        BottomColorButton:
+            background_color: C('#8cc7b5')
+

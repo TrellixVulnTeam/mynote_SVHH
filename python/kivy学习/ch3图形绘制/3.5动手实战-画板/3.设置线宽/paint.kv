@@ -1,0 +1,35 @@
+#:import C kivy.utils.get_color_from_hex
+# <LineWidthButton@ToggleButton>:
+#     group:'line_width'
+#     color:C('#2c3e50')
+#     background_color:C('#ecf0f1')
+#         background_normal:''
+#         background_down:''
+#     border:(3,3,3,3)
+    # on_release:app.canvas.widget.change_line_width(self.text)
+
+
+<DrawCanvasWidget>:
+    canvas.before:
+        Color:
+            rgba: [1,1,1,1]
+        Rectangle:
+            pos:self.pos
+            size:self.size
+    
+    # BoxLayout:
+    #     orientation:'horizontal'
+    #     padding:2
+    #     spacing:2
+    #     x:0
+    #     top:root.top
+    #     size_hint:None,None
+    #     size:280,44
+
+    #     LineWidthButton:
+    #         text:'Thin'
+    #     LineWidthButton:
+    #         text:'Normal'
+    #         state:'down'
+    #     LineWidthButton:
+    #         text:'Thick'
