@@ -1,7 +1,7 @@
-# python工具集--d2u命令
+# python工具集--d2u命令功能更新
 日常工作中当对csv文件进行入库(PostgreSQL数据库)操作时，有时会遇到下方错误提示：
 ```sql
-qx=# COPY nr_test FROM 'F:\file\tmp\nr.csv' DELIMITER ',' CSV HEADER ENCODING 'GB18030';
+qx=# COPY nr_test FROM 'F:\file\tmp\nr1.csv' DELIMITER ',' CSV HEADER ENCODING 'GB18030';
 错误:  在数据中找到了未用引号引起来的新行
 提示:  使用用引号因起来的CSV字段来表示新行.
 背景:  COPY nr_test, 行 2
@@ -23,39 +23,32 @@ Mac 系统中：每行结尾是 "<回车>"，即 "\r"。
 ## d2u命令使用说明
 d2u命令是用python写的一个命令行工具，直接输入d2u回车会显示命令行的使用简介
 ```powershell
-PS F:\file\tmp> d2u
-usage: 换行符转换 [-h] -o ORGINFILE -t TARGETFILE [-v]
-换行符转换: error: the following arguments are required: -o/--orginfile, -t/--targetfile
+usage: 换行符转换 [-h] [-v] file [file ...]
+换行符转换: error: the following arguments are required: file
 ```
 输入d2u -h可以显示帮助信息
 ```powershell
-PS F:\file\tmp> d2u -h
-usage: 换行符转换 [-h] -o ORGINFILE -t TARGETFILE [-v]
+usage: 换行符转换 [-h] [-v] file [file ...]
 
 换行符转换
 
+positional arguments:
+  file           源文件
+
 optional arguments:
-  -h, --help            show this help message and exit
-  -o ORGINFILE, --orginfile ORGINFILE
-                        原始文件
-  -t TARGETFILE, --targetfile TARGETFILE
-                        目标文件
-  -v, --version         版本信息
+  -h, --help     show this help message and exit
+  -v, --version  版本信息
 ```
 
 输入d2u -v 可显示版本信息
 ```powershell
 PS F:\file\tmp> d2u -v
-换行符转换 0.0.1
+换行符转换 0.0.2
 ```
-### 关键参数说明
+### 使用举例
 ```powershell
-PS F:\file\tmp> d2u -o .\nr.csv -t nr2.csv
+PS F:\file\tmp> d2u .\nr1.csv .\nr2.csv .\nr3.csv .\nr4.csv
 ```
--o ：原始的输入文件， -t：转换后要保存的目标文件
-执行上述命令后，nr2.csv文件就是转换换行符后的文件。
+命令后面跟1个文件或多个文件均可以，多个文件的话程序会依次处理，处理完毕后，原始文件会增加.bk的后缀。
+经过上面的处理，nr1.csv、nr2.csv、nr3.csv、nr4.csv文件就可以直接入库了，不会在报换行符的错误了。
 
-
-转换后可直接对文件入库，入库脚本生成可使用did命令，
-![](vx_images/4065142090845.png)
-关于did命令的使用可查看下方链接。
