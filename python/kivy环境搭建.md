@@ -14,15 +14,5 @@ virtualenv kv-demo-env
 
 ## 安装kivy相关包
 ```python
-python -m pip install docutils pygments pypiwin32 kivy_deps.sdl2 kivy_deps.glew
+python -m pip install kivy[full] kivy_examples
 ```
-```python
-python -m pip install kivy_deps.gstreamer
-```
-```python
-python -m pip install kivy_deps.angle
-```
-```python
-python -m pip install kivy
-```
-

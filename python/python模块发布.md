@@ -47,3 +47,17 @@ password = 123qwe*90OP
 ```bash
 twine upload dist/*
 ```
+
+## cython编译模块
+setup.py文件
+```python
+from distutils.core import setup
+from Cython.Build import cythonize
+
+setup(name='nokia',
+      ext_modules=cythonize("nokiaOmcQuery.pyx"))
+```
+执行
+```python
+python setup.py build_ext --inplacecd
+```
