@@ -31,6 +31,14 @@ python3 -m build
 ```bash
 python3 setup.py sdist bdist_wheel
 ```
+开发时为了避免重复安装写好的wheel包，可以使用下面命令直接链接到新写的包
+```python
+python setup.py develop
+```
+删除链接
+```python
+python setup.py develop -u
+```
 ## 在家目录创建.pypirc文件
 创建完该文件后用twine上传模块就不需要输入用户名密码了
 ```bash
