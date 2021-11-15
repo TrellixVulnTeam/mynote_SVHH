@@ -1,4 +1,8 @@
 # PostGIS
+启用扩展
+```sql
+CREATE EXTENSION postgis
+```
 空间图形数据入库脚本
 ```sql
 CREATE TABLE County_Boundary
