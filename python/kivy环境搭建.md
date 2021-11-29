@@ -16,3 +16,7 @@ virtualenv kv-demo-env
 ```python
 python -m pip install kivy[full] kivy_examples
 ```
+强制重新安装
+```python
+pip install --upgrade --force-reinstall kivy[full] kivy_examples -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
