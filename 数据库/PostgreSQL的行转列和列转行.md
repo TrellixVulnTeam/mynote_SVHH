@@ -1,13 +1,12 @@
-PostgreSQL的行转列和列转行
+## PostgreSQL的行转列和列转行
 
-PostgreSQL的行转列和列转行
 Oracle中的行转列和列转行分别有pivot和unpivot方法。
 
 在PostgreSQL中，行列互转的方法也有很多，在这里介绍常用的两种。
 
-crosstab行转列
+### crosstab行转列
 有某平均温度数据（data_avg_temp）：
-
+```text
 name	month	avg_temp
 康山	jan	5
 康山	apr	16.3
@@ -17,17 +16,25 @@ name	month	avg_temp
 棠荫	apr	17.6
 棠荫	july	29.7
 棠荫	oct	20.3
-要转换成如下格式：
+```
 
+要转换成如下格式：
+```text
 name	jan	apr	july	oct
 康山	5	16.3	28.8	19.2
 棠荫	6	17.6	29.7	20.3
+```
+
 使用crosstab方法实现行转列：
 
 使用crosstab方法，需要安装扩展模块tablefunc：
-CREATE EXTENSION tablefunc;--第一次使用crosstab前执行，后续无需再执行
+```sql
+CREATE EXTENSION tablefunc;
+```
+第一次使用crosstab前执行，后续无需再执行
 
 实现代码：
+```sql
 SELECT * FROM crosstab
 (
 	'SELECT name, month, avg_temp FROM data_avg_temp ORDER  BY 1,2',
@@ -35,6 +42,8 @@ SELECT * FROM crosstab
 )
 AS data_avg_temp_cross
 (name text, jan numeric, apr numeric, july numeric, oct numeric);
+```
+
 或：
 
 SELECT * FROM crosstab

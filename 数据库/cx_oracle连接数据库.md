@@ -1,5 +1,5 @@
 # cx_oracle连接数据库
-
+cx_oracle.databaseerror dpi-1047 cannot locate a 64-bit oracle client library
 1、将dll文件拷贝的python安装目录
 ![](vx_images/40463920211268.png)
 

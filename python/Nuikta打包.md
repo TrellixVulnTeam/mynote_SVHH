@@ -56,3 +56,7 @@ mdl.my_module()
   ```cmd
 nuitka --mingw64 --standalone --show-progress --show-memory --follow-import-to=need  --output-dir=../out .\main.py
   ```
+  openpyxl模块打包后提示找不到该模块，后来用下面的方法解决了。
+  ```cmd
+ nuitka --mingw64 --standalone --show-progress --show-memory --nofollow-import-to=pandas,numpy --enable-plugin=numpy --include-package=openpyxl  --output-dir=out prb.py
+  ```
