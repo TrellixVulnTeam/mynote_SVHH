@@ -62,3 +62,11 @@ git rm -r --cached .
 git add .
 git commit -m 'update.gitignore'
 ```
+# git代理设置
+在用户文件夹下新建.gitconfig文件，文件内容如下：
+```git
+[http]
+proxy = http://127.0.0.1:7890
+[https]
+proxy = http://127.0.0.1:7890
+```
