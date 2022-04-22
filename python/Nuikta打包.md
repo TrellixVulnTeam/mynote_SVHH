@@ -9,10 +9,11 @@ if __name__ == '__main__':
 ```
 打包命令：
 ```cmd
-nuitka --mingw64 --standalone --show-progress --show-memory  --output-dir=out .\hello.py
+nuitka hello.py --standalone --onefile
 ```
-生成的hello.dist目录25M，将整个目录拷贝到没有Python环境的电脑可以运行。
+生成的hello.dist目录5.7M，将整个目录拷贝到没有Python环境的电脑可以运行。
 将编译后的hello.exe二进制文件在自己电脑上随意移动也可以运行。
+注意：在使用onefile模式前应确保standalone模式程序可以正常运行。
 Python源码：
 ```python
 import numpy as np

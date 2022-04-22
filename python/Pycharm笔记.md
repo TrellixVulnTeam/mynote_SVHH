@@ -1,4 +1,4 @@
-# 环境搭建
+# Pycharm笔记
 ## autopep8设置
 ```text
 名称：autopep8
